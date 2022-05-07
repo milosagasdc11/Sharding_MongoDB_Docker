@@ -1,0 +1,93 @@
+version: '3'
+services:
+  mongos01:
+    image: mongo-proxy
+    container_name: mongos01
+    hostname: mongos01
+    volumes:
+      - ./mongos.conf:/etc/mongos.conf:ro
+    restart: always
+  config01:
+    image: mongo-server
+    container_name: config01
+    hostname: config01
+    volumes:
+      - ./mongo_config.conf:/etc/mongod.conf:ro
+    restart: always
+  config02:
+    image: mongo-server
+    container_name: config02
+    hostname: config02
+    volumes:
+      - ./mongo_config.conf:/etc/mongod.conf:ro
+    restart: always
+  config03:
+    image: mongo-server
+    container_name: config03
+    hostname: config03
+    volumes:
+      - ./mongo_config.conf:/etc/mongod.conf:ro
+    restart: always
+  A01:
+    image: mongo-server
+    container_name: A01
+    hostname: A01
+    volumes:
+      - ./mongod_A.conf:/etc/mongod.conf:ro
+    restart: always
+  A02:
+    image: mongo-server
+    container_name: A02
+    hostname: A02
+    volumes:
+      - ./mongod_A.conf:/etc/mongod.conf:ro
+    restart: always
+  A03:
+    image: mongo-server
+    container_name: A03
+    hostname: A03
+    volumes:
+      - ./mongod_A.conf:/etc/mongod.conf:ro
+    restart: always
+  B01:
+    image: mongo-server
+    container_name: B01
+    hostname: B01
+    volumes:
+      - ./mongod_B.conf:/etc/mongod.conf:ro
+    restart: always
+  B02:
+    image: mongo-server
+    container_name: B02
+    hostname: B02
+    volumes:
+      - ./mongod_B.conf:/etc/mongod.conf:ro
+    restart: always
+  B03:
+    image: mongo-server
+    container_name: B03
+    hostname: B03
+    volumes:
+      - ./mongod_B.conf:/etc/mongod.conf:ro
+    restart: always
+  C01:
+    image: mongo-server
+    container_name: C01
+    hostname: C01
+    volumes:
+      - ./mongod_C.conf:/etc/mongod.conf:ro
+    restart: always
+  C02:
+    image: mongo-server
+    container_name: C02
+    hostname: C02
+    volumes:
+      - ./mongod_C.conf:/etc/mongod.conf:ro
+    restart: always
+  C03:
+    image: mongo-server
+    container_name: C03
+    hostname: C03
+    volumes:
+      - ./mongod_C.conf:/etc/mongod.conf:ro
+    restart: always
